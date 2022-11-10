@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/styles/navbar.css}">
+    <link rel="stylesheet" href="../../static/styles/navbar.css">
+    <link rel="stylesheet" th:href="@{/styles/template.css}">
+    <link rel="stylesheet" href="../../static/styles/template.css">
+    <link rel="stylesheet" th:href="@{/styles/check.css}">
+    <link rel="stylesheet" href="../../static/styles/check.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+    <title>Secure Home Page</title>
+</head>
+
+<body>
+    <nav class="app__navbar">
+
+        <!-- Link to the index with logo within -->
+        <a href="#" th:href="@{/secure}" class="app__navbar-mobile">
+            <img class="" src="../../static/images/springlogo.png" th:src="@{/images/springlogo.png}" alt="menu" />
+        </a>
+
+        <a href="#" th:href="@{/secure}" class="app__navbar-mobile">
+            <h1 class="app__title">Java Enterprise</h1>
+        </a>
+
+        <!-- <img class="app__navbar-mobile" src="./_images/springlogo.png" alt="menu" /> -->
+
+        <ul class="app__navbar-desktop app__navbar-left">
+            <a href="#" th:href="@{/secure}">
+                <img class="app__brand-logo" src="../../static/images/springlogo.png" th:src="@{/images/springlogo.png}"
+                    alt="logo" />
+            </a>
+            <a href="#" th:href="@{/secure}" class="">
+                <h1 class="app__title">Java Enterprise</h1>
+            </a>
+        </ul>
+        <ul class="app__navbar-right">
+            <li class="app__navbar-desktop"><span sec:authentication="name"> </span></li>
+            <li>
+                <a href="#" th:href="@{/logout}">
+                    <i class="material-symbols-outlined">
+                        logout
+                    </i>
+                </a>
+            </li>
+        </ul>
+
+
+    </nav>
+
+    <main class="app__main--container">
+        <div class="app__message">
+            <h1>Authorized</h1>
+            <p>Hi <span sec:authentication="name"></span>, you have successfully logged in!</p>
+
+            <p>Here is some information about you:</p>
+            <ul>
+                <li>Username: <span sec:authentication="name"></span></li>
+                <li>Authorities: <span sec:authentication="principal.authorities"></span></li>
+            </ul>
+        </div>
+
+        <figure>
+            <img src="../../static/images/check.png" th:src="@{/images/check.png}" alt="Authorized">
+        </figure>
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#FFE8A4" fill-opacity="0.7"
+                d="M0,128L40,106.7C80,85,160,43,240,64C320,85,400,171,480,197.3C560,224,640,192,720,181.3C800,171,880,181,960,165.3C1040,149,1120,107,1200,117.3C1280,128,1360,192,1400,224L1440,256L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+            </path>
+        </svg>
+    </main>
+</body>
+
+</html>

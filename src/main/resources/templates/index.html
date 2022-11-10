@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" th:href="@{/styles/navbar.css}">
+    <link rel="stylesheet" href="../../static/styles/navbar.css">
+    <link rel="stylesheet" th:href="@{/styles/template.css}">
+    <link rel="stylesheet" href="../../static/styles/template.css">
+    <link rel="stylesheet" href="../../static/styles/under-construction.css">
+    <link rel="stylesheet" th:href="@{/styles/under-construction.css}">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
+    <title>Index Page</title>
+</head>
+
+<body>
+    <nav class="app__navbar">
+
+        <!-- Link to the index with logo within -->
+        <a href="#" th:href="@{/}" class="app__navbar-mobile">
+            <img class="" src="../../static/images/springlogo.png" th:src="@{/images/springlogo.png}" alt="menu" />
+        </a>
+
+        <a href="#" th:href="@{/}" class="app__navbar-mobile">
+            <h1 class="app__title">Java Enterprise</h1>
+        </a>
+
+        <ul class="app__navbar-desktop app__navbar-left">
+            <a href="#" th:href="@{/}">
+                <img class="app__brand-logo" src="../../static/images/springlogo.png" th:src="@{/images/springlogo.png}"
+                    alt="logo" />
+            </a>
+            <a href="#" th:href="@{/}" class="">
+                <h1 class="app__title">Java Enterprise</h1>
+            </a>
+        </ul>
+        <ul class="app__navbar-right">
+
+
+            <li>
+                <!-- <a class="app__button app__button--stripe app__button--primary" href="#" th:href="@{/secure}">Log In</a> -->
+                <button class="app__button app__button--stripe app__button--primary"
+                    onclick="window.location.href = '/secure/index';">Log In</button>
+            </li>
+
+            <li>
+                <button class="app__button app__button--stripe app__button--secondary">Sign Up</button>
+            </li>
+        </ul>
+    </nav>
+    <main class="app__main--container">
+        <div class="app__message">
+            <h1>Under Construction</h1>
+            <p>Sorry, this page is under construction. Thank you for your patience.</p>
+
+            <p>For more information, please contact us at <a href="mailto:leonardo@mail.com">this email</a>.</p>
+            <!-- <button class="app__button app__button--primary app__button--stripe"
+                onclick="window.location.href = '/';">Back Home</button> -->
+        </div>
+
+        <figure>
+            <img src="../../static/images/work_in_progress.png" th:src="@{/images/work_in_progress.png}"
+                alt="Under Construction">
+        </figure>
+
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#00cba9" fill-opacity="0.8"
+                d="M0,96L26.7,128C53.3,160,107,224,160,234.7C213.3,245,267,203,320,197.3C373.3,192,427,224,480,197.3C533.3,171,587,85,640,85.3C693.3,85,747,171,800,208C853.3,245,907,235,960,240C1013.3,245,1067,267,1120,229.3C1173.3,192,1227,96,1280,53.3C1333.3,11,1387,21,1413,26.7L1440,32L1440,320L1413.3,320C1386.7,320,1333,320,1280,320C1226.7,320,1173,320,1120,320C1066.7,320,1013,320,960,320C906.7,320,853,320,800,320C746.7,320,693,320,640,320C586.7,320,533,320,480,320C426.7,320,373,320,320,320C266.7,320,213,320,160,320C106.7,320,53,320,27,320L0,320Z">
+            </path>
+        </svg> -->
+
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+            <path fill="#C886D3" fill-opacity="0.7"
+                d="M0,160L40,154.7C80,149,160,139,240,165.3C320,192,400,256,480,234.7C560,213,640,107,720,74.7C800,43,880,85,960,117.3C1040,149,1120,171,1200,149.3C1280,128,1360,64,1400,32L1440,0L1440,320L1400,320C1360,320,1280,320,1200,320C1120,320,1040,320,960,320C880,320,800,320,720,320C640,320,560,320,480,320C400,320,320,320,240,320C160,320,80,320,40,320L0,320Z">
+            </path>
+        </svg>
+    </main>
+</body>
+
+</html>

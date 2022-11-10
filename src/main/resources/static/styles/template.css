@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;400;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Viaoda+Libre&display=swap');
+
+:root {
+    --independence: #555B6E;
+    --morning-blue: #89B0AE;
+    --powder-blue: #BEE3DB;
+    --cultured: #FAF9F9;
+    --apricot: #FFD6BA;
+    --spring-green: #68BD45;
+    --wave--green: #00cba9;
+    --danger-color: #FF725E;
+    --lyla-purple: #C886D3;
+    --light-yellow: #FFE8A4;
+    --strong-yellow: #FFD166;
+    --xsmall-font: 0.85rem;
+    --small-font: 1rem;
+    --medium-font: 1.2rem;
+    --large-font: 1.4rem;
+}
+
+body {
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    box-sizing: border-box;
+    background-color: var(--cultured);
+}
+
+/* Template for buttons */
+.app__button {
+    text-transform: uppercase;
+    padding: 0.80rem 0.75rem;
+    border: 1px solid #fff;
+    border-radius: 0.4rem;
+    width: 180px;
+    color: #fff;
+    font-weight: 700;
+
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+
+    transition: all 0.5s ease;
+}
+
+ 
+/* Buttons on hover */
+.app__button:hover {
+    border: 2px solid #ddd;
+    color: #ddd;
+}
+
+/* Adding the stripe form to the buttons */
+.app__button--stripe {
+    overflow: hidden;
+    position: relative;
+
+}
+
+.app__button--stripe::after {
+    content: '';
+    display: block;
+    height: 4px;
+    width: 100%;
+    background-image: repeating-linear-gradient(-45deg,
+            #fff,
+            #fff 2px,
+            transparent 2px,
+            transparent 5px);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    border-top: 1px solid #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background-size: 7px 7px;
+}
+
+/* Animating the stripes */
+.app__button--stripe:hover::after {
+    background-image: repeating-linear-gradient(-45deg,
+            #ddd,
+            #ddd 2px,
+            transparent 2px,
+            transparent 5px);
+    border-top: 2px solid #ddd;
+    animation: stripe-slide 12s linear infinite forwards;
+}
+
+@keyframes stripe-slide {
+    0% {
+        background-position: 0% 0;
+   }
+    100% {
+        background-position: 100% 0;
+   }
+}
+
+/* Coloring the primary button */
+.app__button--primary {
+    background-color: var(--spring-green);
+}
+
+/* Coloring the primary button when is hover */
+.app__button--primary:hover {
+    background-color: var(--wave--green);
+}
+
+/* Coloring the secondary button */
+.app__button--secondary {
+    background-color: var(--independence);
+}
+/* 
+.app__button--secondary:hover {
+    background-color: var(--morning-blue);
+} */
+
+/* Coloring danger button */
+.app__button--danger {
+    background-color: var(--apricot);
+}

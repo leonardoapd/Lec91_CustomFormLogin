@@ -1,0 +1,93 @@
+.app__main--container {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    padding: 4rem;
+    border-radius: 1.5rem;
+    background: #f0f0f0;
+    box-shadow: 20px 20px 60px #bebebe,
+        -20px -20px 60px #ffffff;
+    width: 30%;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    margin-top: 6rem;
+}
+
+.container__form--row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+.container__form--column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.container__form--column label {
+    width: 100%;
+}
+
+.container__form--column textarea {
+    height: 6.5rem;
+}
+
+.container__form--input {
+    padding: 0.75rem 1rem;
+    /* border: 0.2px solid grey; */
+    border: none;
+    box-sizing: border-box;
+    border-radius: 0.50rem;
+    width: 100%;
+    caret-color: cornflowerblue;
+    /* box-shadow: 0.25rem 0.25rem 0 var(--black-shadow-color); */
+
+    box-shadow: 5px 5px 10px #bebebe,
+        -5px -5px 10px #ffffff;
+}
+
+.container__form--input:focus {
+    outline: none;
+    border: 1px solid var(--secondary-color-blue);
+}
+
+.container__form--input::placeholder {
+    color: rgb(204, 204, 204);
+}
+
+.container__form--column button {
+
+    align-self: end;
+    margin-top: 0.5rem;
+}
+
+svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.error {
+    color: var(--danger-color);
+    font-size: 0.85rem;
+}
+
+.success {
+    color: var(--spring-green);
+    font-size: 0.85rem;
+}
