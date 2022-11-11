@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/styles/navbar.css}">
-    <link rel="stylesheet" href="../../static/styles/navbar.css">
-    <link rel="stylesheet" th:href="@{/styles/template.css}">
-    <link rel="stylesheet" href="../../static/styles/template.css">
-    <link rel="stylesheet" href="../../static/styles/unauthorized.css">
-    <link rel="stylesheet" th:href="@{/styles/unauthorized.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" href="../../static/css/navbar.css">
+    <link rel="stylesheet" th:href="@{/css/template.css}">
+    <link rel="stylesheet" href="../../static/css/template.css">
+    <link rel="stylesheet" href="../../static/css/forbiden.css">
+    <link rel="stylesheet" th:href="@{/css/forbiden.css}">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
     <title>Permission Denied</title>
@@ -55,15 +55,15 @@
 
     <main class="app__main--container">
         <div class="app__message">
-            <h1>Unauthorized</h1>
-            <p>You are not authorized to view this page.</p>
+            <h1>Forbiden</h1>
+            <p>You are forbiden to view this page.</p>
 
             <button class="app__button app__button--danger app__button--stripe"
                 onclick="window.location.href = '/';">Back to Index</button>
         </div>
 
         <figure>
-            <img src="../../static/images/unauthorized.png" th:src="@{/images/unauthorized.png}" alt="401" />
+            <img src="../../static/images/forbiden.png" th:src="@{/images/forbiden.png}" alt="401" />
         </figure>
 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

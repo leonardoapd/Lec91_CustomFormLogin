@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{/styles/navbar.css}">
-    <link rel="stylesheet" href="../../static/styles/navbar.css">
-    <link rel="stylesheet" th:href="@{/styles/template.css}">
-    <link rel="stylesheet" href="../../static/styles/template.css">
-    <link rel="stylesheet" href="../../static/styles/under-construction.css">
-    <link rel="stylesheet" th:href="@{/styles/under-construction.css}">
+    <link rel="stylesheet" th:href="@{/css/navbar.css}">
+    <link rel="stylesheet" href="../../static/css/navbar.css">
+    <link rel="stylesheet" th:href="@{/css/template.css}">
+    <link rel="stylesheet" href="../../static/css/template.css">
+    <link rel="stylesheet" href="../../static/css/under-construction.css">
+    <link rel="stylesheet" th:href="@{/css/under-construction.css}">
 
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
@@ -37,18 +37,37 @@
             <a href="#" th:href="@{/}" class="">
                 <h1 class="app__title">Java Enterprise</h1>
             </a>
+
+            <!-- If the user is logged in, show the links to home and check page -->
+            <div sec:authorize="hasRole('ROLE_USER')" class="app__navbar-links">
+                <li  class="app__navbar-item">
+                    <a href="#" th:href="@{/secure}" class="app__navbar-link">Home</a>
+                </li>
+                <li class="app__navbar-item">
+                    <a href="#" th:href="@{/secure/check}" class="app__navbar-link">Check</a>
+                </li>
+            </div>
+
         </ul>
-        <ul class="app__navbar-right">
-
-
-            <li>
-                <!-- <a class="app__button app__button--stripe app__button--primary" href="#" th:href="@{/secure}">Log In</a> -->
-                <button class="app__button app__button--stripe app__button--primary"
+        <ul sec:authorize="!isAuthenticated()" class="app__navbar-right">
+            <li >
+                <!-- <a class="app__button app__button--stripe app__button--primary" href="#" th:href="@{/secure}">Log In</a>  -->
+                <button class="app__button app__button--stripe app__button--primary" type="button"
                     onclick="window.location.href = '/secure';">Log In</button>
             </li>
-
+    
             <li>
                 <button class="app__button app__button--stripe app__button--secondary">Sign Up</button>
+            </li>
+        </ul>
+        <ul sec:authorize="isAuthenticated()" class="app__navbar-right">
+            <li class="app__navbar-desktop"><span sec:authentication="name"> </span></li>
+            <li>
+                <a href="#" th:href="@{/logout}">
+                    <i class="material-symbols-outlined">
+                        logout
+                    </i>
+                </a>
             </li>
         </ul>
     </nav>

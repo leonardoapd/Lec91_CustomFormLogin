@@ -13,7 +13,7 @@ public class HomeController {
 
     @GetMapping("/secure")
     public String secureIndex() {
-        return "/secure/index";
+        return "/secure/home";
     }
 
     @GetMapping("/login")

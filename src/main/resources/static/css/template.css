@@ -30,7 +30,7 @@ body {
 .app__button {
     text-transform: uppercase;
     padding: 0.80rem 0.75rem;
-    border: 1px solid #fff;
+    border: 2px solid transparent;
     border-radius: 0.4rem;
     width: 180px;
     color: #fff;
