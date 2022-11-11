@@ -1,11 +1,22 @@
 package ca.sheridancollege.perdomod.controllers;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import ca.sheridancollege.perdomod.beans.User;
+import ca.sheridancollege.perdomod.database.DatabaseAccess;
 
 @Controller
 public class HomeController {
-    
+
+    // Injecting the DatabaseAccess dependency
+    @Autowired
+    private DatabaseAccess da;
+
     @GetMapping("/")
     public String index() {
         return "index";
@@ -29,6 +40,23 @@ public class HomeController {
     @GetMapping("/secure/check")
     public String check() {
         return "/secure/check";
+    }
+
+    @GetMapping("/signup")
+    public String signup() {
+        return "signup";
+    }
+
+    @PostMapping("/addUser")
+    public String addUser(User user, Model model) {
+        user.setEnabled(true);
+        da.addUser(user);
+        model.addAttribute("user", new User());
+
+        Boolean success = true;
+
+        model.addAttribute("signup", success);
+        return "login";
     }
 
 }

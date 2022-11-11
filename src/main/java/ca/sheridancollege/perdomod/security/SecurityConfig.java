@@ -69,7 +69,7 @@ public class SecurityConfig {
 
                 http.authorizeRequests()
                                 .antMatchers("/secure/**").hasRole("USER")
-                                .antMatchers("/", "/js/**", "/css/**", "/images/**", "/permission-denied").permitAll()
+                                .antMatchers("/", "/js/**", "/css/**", "/images/**", "/permission-denied", "/signup", "/addUser").permitAll()
                                 // TODO: remove this line when you are done testing
                                 .antMatchers("/h2-console/**").permitAll()
                                 .antMatchers("/**").denyAll()

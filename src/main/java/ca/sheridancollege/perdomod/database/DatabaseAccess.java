@@ -42,4 +42,21 @@ public class DatabaseAccess {
         return jdbc.queryForList(query, namedParameters, String.class);
     }
 
+    // Method to add a new user to the database
+    public void addUser(User user) {
+        MapSqlParameterSource namedParameters = new MapSqlParameterSource();
+        String query = "INSERT INTO sec_user (email, encryptedPassword, enabled) "
+                + "VALUES (:email, :encryptedPassword, :enabled)";
+        namedParameters.addValue("email", user.getEmail());
+        namedParameters.addValue("encryptedPassword", user.getEncryptedPassword());
+        namedParameters.addValue("enabled", user.getEnabled());
+        
+
+        if (jdbc.update(query, namedParameters) > 0) {
+            System.out.println("User added to database");
+        } else {
+            System.out.println("User not added to database");
+        }
+    }
+
 }
