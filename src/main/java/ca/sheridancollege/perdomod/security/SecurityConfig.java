@@ -44,6 +44,12 @@ public class SecurityConfig {
                                 .build();
         }
 
+        // Enable JDBC authentication
+        // @Autowired
+        // public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+        //         auth.userDetailsService(userDetailsService).passwordEncoder(encoder());
+        // }
+
         // @Bean
         // public UserDetailsService userDetailsService() {
         // InMemoryUserDetailsManager manager = new InMemoryUserDetailsManager();

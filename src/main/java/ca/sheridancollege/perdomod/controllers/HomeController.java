@@ -1,6 +1,7 @@
 package ca.sheridancollege.perdomod.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -16,6 +17,10 @@ public class HomeController {
     // Injecting the DatabaseAccess dependency
     @Autowired
     private DatabaseAccess da;
+
+    // Injecting the BCryptPasswordEncoder dependency
+    @Autowired
+    private BCryptPasswordEncoder passwordEncoder;
 
     @GetMapping("/")
     public String index() {
@@ -50,6 +55,10 @@ public class HomeController {
     @PostMapping("/addUser")
     public String addUser(User user, Model model) {
         user.setEnabled(true);
+
+        // Encrypt the password
+        String encodedPassword = passwordEncoder.encode(user.getEncryptedPassword());
+        user.setEncryptedPassword(encodedPassword);
         da.addUser(user);
         model.addAttribute("user", new User());
 

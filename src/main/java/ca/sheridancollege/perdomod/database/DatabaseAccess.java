@@ -50,13 +50,31 @@ public class DatabaseAccess {
         namedParameters.addValue("email", user.getEmail());
         namedParameters.addValue("encryptedPassword", user.getEncryptedPassword());
         namedParameters.addValue("enabled", user.getEnabled());
-        
+
+        // ROLES ID 1 = USER, 2 = GUEST
+        Integer ROLEID = 1;
 
         if (jdbc.update(query, namedParameters) > 0) {
+            // Get the user ID of the new user
+            Long userId = getLastID();
+            System.out.println("User ID: " + userId);
+            // Adding the role for the user
+            String query2 = "INSERT INTO user_role (userId, roleId) "
+                    + "VALUES (:userId, :roleId)";
+            namedParameters.addValue("userId", userId);
+            namedParameters.addValue("roleId", ROLEID);
+            jdbc.update(query2, namedParameters);
             System.out.println("User added to database");
         } else {
             System.out.println("User not added to database");
         }
+    }
+
+    // Getting the last ID inserted in the database H2
+    public Long getLastID() {
+
+        String query = "SELECT MAX(userId) FROM sec_user";
+        return jdbc.queryForObject(query, new MapSqlParameterSource(), Long.class);
     }
 
 }
