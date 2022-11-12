@@ -86,6 +86,7 @@
 
     .app__navbar {
         padding: 0.8rem 12rem;
+        z-index: 3;
     }
 
     .app__title {

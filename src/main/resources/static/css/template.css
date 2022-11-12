@@ -118,3 +118,7 @@ body {
 .app__button--danger {
     background-color: var(--apricot);
 }
+
+.app__message {
+    margin: 2.8rem;
+}
