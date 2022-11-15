@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 
 <head>
     <meta charset="UTF-8">
@@ -20,57 +20,75 @@
 <body>
     <nav class="app__navbar">
 
-        <!-- Link to the index with logo within -->
-        <a href="#" th:href="@{/}" class="app__navbar-mobile">
-            <img class="" src="../static/images/springlogo.png" th:src="@{/images/springlogo.png}" alt="menu" />
-        </a>
-
-        <a href="#" th:href="@{/}" class="app__navbar-mobile">
-            <h1 class="app__title">Java Enterprise</h1>
-        </a>
-
-        <ul class="app__navbar-desktop app__navbar-left">
-            <a href="#" th:href="@{/}">
-                <img class="app__brand-logo" src="../static/images/springlogo.png" th:src="@{/images/springlogo.png}"
-                    alt="logo" />
+        <div class="app__navbar-logo app__navbar-mobile">
+            <!-- Link to the index with logo within -->
+            <a href="#" th:href="@{/}" class="app__logo-link">
+                <img class="" src="../static/images/springlogo.png" th:src="@{/images/springlogo.png}" alt="menu" />
             </a>
-            <a href="#" th:href="@{/}" class="">
+        </div>
+
+        <div class="app__navbar-title app__navbar-mobile">
+            <a href="#" th:href="@{/}" class="app__logo-link">
+                <h1 class="app__title">Java Enterprise</h1>
+            </a>
+        </div>
+
+        <div class="app__navbar-logo app__navbar-desktop">
+            <!-- Link to the index with logo within -->
+            <a href="#" th:href="@{/}" class="app__logo-link">
+                <img class="" src="../static/images/springlogo.png" th:src="@{/images/springlogo.png}" alt="menu" />
+            </a>
+            <a href="#" th:href="@{/}" class="app__logo-link">
                 <h1 class="app__title">Java Enterprise</h1>
             </a>
 
-            <!-- If the user is logged in, show the links to home and check page -->
-            <div sec:authorize="hasRole('ROLE_USER')" class="app__navbar-links">
-                <li  class="app__navbar-item">
-                    <a href="#" th:href="@{/secure}" class="app__navbar-link">Home</a>
-                </li>
-                <li class="app__navbar-item">
-                    <a href="#" th:href="@{/secure/check}" class="app__navbar-link">Check</a>
-                </li>
-            </div>
+            <ul class="app__navbar-links app__navbar-desktop" id="app__navbar-desktop-links">
+                <!-- Links once the user is authenticated -->
+            </ul>
+        </div>
 
-        </ul>
         <ul sec:authorize="!isAuthenticated()" class="app__navbar-right">
-            <li >
-                <!-- <a class="app__button app__button--stripe app__button--primary" href="#" th:href="@{/secure}">Log In</a>  -->
+
+            <li class="app__navbar-desktop">
                 <button class="app__button app__button--stripe app__button--primary" type="button"
                     onclick="window.location.href = '/secure';">Log In</button>
             </li>
-    
-            <li>
-                <button class="app__button app__button--stripe app__button--secondary" type="button" onclick="window.location.href = '/signup';">Sign Up</button>
+
+            <li class="app__navbar-desktop">
+                <button class="app__button app__button--stripe app__button--secondary" type="button"
+                    onclick="window.location.href = '/signup';">Sign Up</button>
             </li>
+
+
+            <li id="app__navbar-menu-btn" class="app__navbar-mobile">
+                <i class="material-symbols-outlined" onclick="toggleMenu(true)">
+                    menu
+                </i>
+            </li>
+
         </ul>
+
         <ul sec:authorize="isAuthenticated()" class="app__navbar-right">
-            <li class="app__navbar-desktop"><span sec:authentication="name"> </span></li>
-            <li>
+            <li class="app__navbar-desktop"><span sec:authentication="name"></span></li>
+            <li class="app__navbar-desktop">
                 <a href="#" th:href="@{/logout}">
                     <i class="material-symbols-outlined">
                         logout
                     </i>
                 </a>
             </li>
+            <li id="app__navbar-menu-btn" class="app__navbar-mobile">
+                <i class="material-symbols-outlined" onclick="toggleMenu(true)">
+                    menu
+                </i>
+            </li>
         </ul>
     </nav>
+
+    <div class="app__navbar-menu app__navbar-mobile" id="app__navbar-menu">
+        <!-- Here appears the mobile menu-->
+    </div>
+
     <main class="app__main--container">
         <div class="app__message">
             <h1>Under Construction</h1>
@@ -98,6 +116,16 @@
             </path>
         </svg>
     </main>
+    <!-- Javascript with thymeleaf -->
+    <script type="text/javascript" sec:authorize="!isAuthenticated()">
+        const links = ['login', 'sign up', 'about', 'contact'];
+        const isAuthenticated = false;
+    </script>
+    <script type="text/javascript" sec:authorize="isAuthenticated()">
+        const links = ['home', 'check', 'about', 'contact', 'logout'];
+        const isAuthenticated = true;
+    </script>
+    <script src="../static/js/navbar.js" th:src="@{/js/navbar.js}"></script>
 </body>
 
 </html>

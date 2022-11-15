@@ -1,14 +1,9 @@
-.app__title {
-    font-size: var(--large-font);
-    color: var(--spring-green);
-    text-decoration: none;
-}
-
+/* Styles for the navbar version mobile */
 .app__navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0.8rem 1rem;
+    padding: 0 1rem;
     background-color: rgba(255, 255, 255, 0.25);
 
     width: 100%;
@@ -17,16 +12,12 @@
     -webkit-backdrop-filter: blur(4px);
     border: 1px solid rgba(255, 255, 255, 0.18);
     position: fixed;
-    z-index: 2;
+    z-index: 10;
     top: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-.app__navbar-mobile {
-    text-decoration: none;
-}
-
-.app__navbar-mobile li {
+.app__navbar li {
     list-style: none;
 }
 
@@ -35,46 +26,111 @@
     height: 32px;
 }
 
-.app__navbar .app__brand-logo {
-    width: 80px;
-    height: 45px;
+.app__logo-link {
+    text-decoration: none;
+    color: var(--spring-green);
+}
+
+.material-symbols-outlined {
+    font-size: 32px !important;
+    color: var(--spring-green);
 }
 
 .app__navbar-right {
-    display: flex;
-    list-style: none;
-    align-items: center;
+    padding: 0;
     margin: 0;
-    padding-left: 0;
-}
-
-.app__navbar .app__navbar-right li:nth-child(2) {
-    position: relative;
-    padding: 4px;
-    cursor: pointer;
-}
-
-.app__navbar .app__navbar-right li div {
-    border-radius: 50%;
-    width: 16px;
-    height: 16px;
-    background-color: var(--powder-blue);
-    text-align: center;
-    font-size: var(--xsmall-font);
-    border: 2px solid black;
-
-    position: absolute;
-    top: 0;
-    right: 0;
 }
 
 .app__navbar-desktop {
     display: none;
 }
 
-@media (min-width: 640px) {
+.app__navbar-menu {
+    /* width: 2.1rem;
+    height: 2.1rem; */
+    /* border-radius: 50%; */
+    /* position: relative; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app__navbar-menu div {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 15;
+
+    padding: 2rem 1rem;
+
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
+    background-color: white;
+    color: var(--spring-green);
+
+    animation-name: slideIn;
+    animation-duration: 1s;
+}
+
+.app__navbar-menu div ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.app__navbar-menu div ul li {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.app__navbar-menu div ul li a {
+    color: var(--gray-color);
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.app__navbar-menu div ul li a:hover {
+    color: var(--spring-green);
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Styles for the navbar version desktop */
+@media screen and (min-width: 768px) {
     .app__navbar-mobile {
         display: none;
+    }
+
+    .app__navbar {
+        padding: 0.2rem 12rem;
     }
 
     .app__navbar-desktop {
@@ -82,61 +138,34 @@
         list-style: none;
         align-items: center;
         margin: 0;
+        gap: 1rem;
     }
 
-    .app__navbar {
-        padding: 0.8rem 12rem;
-        z-index: 3;
-    }
-
-    .app__title {
-        margin: 0 2rem;
-    }
-
-    .app__navbar-links {
+    .app__navbar-right {
         display: flex;
-        list-style: none;
         align-items: center;
-        margin-left: 0;
+        gap: 1rem;
     }
 
-    .app__navbar-desktop li {
-        /* margin-right: 1rem;
-        padding: 0.4rem;
-        border-radius: 0.5rem;
-        border: 1px solid white; */
-        text-align: center;
-        transition: all .14s ease-out;
-    }
 
-    .app__navbar-desktop a {
+    .app__navbar-desktop li a {
+        color: var(--gray-color);
         text-decoration: none;
-        color: var(--independence);
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: 500;
+
+        transition: all 0.3s ease-in-out;
     }
 
-    .app__navbar-desktop a:hover {
+    .app__navbar-desktop li a:hover {
         color: var(--spring-green);
     }
 
-    .app__navbar .app__brand-logo {
-        width: 40px;
-        height: 40px;
-    }
-
-    .app__navbar .app__navbar-left {
+    .app__navbar-desktop a {
         display: flex;
-        justify-content: start;
-        padding-left: 0;
+        align-items: center;
+        text-decoration: none;
     }
 
-    .app__navbar .app__navbar-left li:nth-child(2) {
-        margin-left: 1rem;
-    }
-
-    .app__navbar .app__navbar-right li:nth-child(1) {
-        margin-right: 1.2rem;
-        cursor: pointer;
-    }
-
-   
 }
