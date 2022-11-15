@@ -29,7 +29,7 @@ public class HomeController {
 
     @GetMapping("/secure")
     public String secureIndex() {
-        return "/secure/home";
+        return "secure/home";
     }
 
     @GetMapping("/login")
@@ -39,12 +39,12 @@ public class HomeController {
 
     @GetMapping("/permission-denied")
     public String permissionDenied() {
-        return "/error/permission-denied";
+        return "error/permission-denied";
     }
 
     @GetMapping("/secure/check")
     public String check() {
-        return "/secure/check";
+        return "secure/check";
     }
 
     @GetMapping("/signup")

@@ -10,7 +10,7 @@
 	</parent>
 	<groupId>ca.sheridancollege.perdomod</groupId>
 	<artifactId>Lec91_CustomFormLogin</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1</version>
 	<name>Lec91_CustomFormLogin</name>
 	<description>Custom Form Login with Spring boot</description>
 	<properties>
