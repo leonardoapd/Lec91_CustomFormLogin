@@ -117,13 +117,12 @@
         </svg>
     </main>
     <!-- Javascript with thymeleaf -->
-    <script type="text/javascript" sec:authorize="!isAuthenticated()">
-        const links = ['login', 'sign up', 'about', 'contact'];
-        const isAuthenticated = false;
+    <script type="text/javascript">
+        let isAuthenticated = false;
+        const pageType = "index";
     </script>
     <script type="text/javascript" sec:authorize="isAuthenticated()">
-        const links = ['home', 'check', 'about', 'contact', 'logout'];
-        const isAuthenticated = true;
+        isAuthenticated = true;
     </script>
     <script src="../static/js/navbar.js" th:src="@{/js/navbar.js}"></script>
 </body>

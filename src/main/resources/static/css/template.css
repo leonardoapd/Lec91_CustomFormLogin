@@ -123,3 +123,13 @@ body {
 .app__message {
     margin: 2.8rem;
 }
+
+.app__message .app__button {
+    width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .app__message .app__button {
+        width: 60%;
+    }
+}

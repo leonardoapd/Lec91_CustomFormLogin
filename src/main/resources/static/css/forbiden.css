@@ -43,9 +43,6 @@ svg {
     padding: 0;
 }
 
-.app__message .app__button {
-    width: 100%;
-}
 
 @media screen and (min-width: 768px) {
     .app__main--container {
@@ -80,9 +77,5 @@ svg {
 
     .app__message a {
         text-decoration: none;
-    }
-
-    .app__message .app__button {
-        width: 60%;
     }
 }
