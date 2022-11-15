@@ -1,0 +1,85 @@
+.app__main--container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    /* margin-top: 1rem; */
+}
+
+.app__main--container figure {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+}
+
+.app__main--container figure img {
+    width: 50%;
+    order: 1;
+}
+
+.app__message {
+    order: 2;
+}
+
+svg {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    order: 3;
+}
+
+@media screen and (min-width: 768px) {
+    .app__main--container {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-items: center;
+    }
+    
+    .app__main--container figure img {
+        width: 100%;
+        /* position: relative; */
+        z-index: 2;
+    }
+    
+    .app__message {
+        /* position: relative; */
+        z-index: 2;
+    }
+    
+    svg {
+        z-index: 1;
+    }
+    
+    .app__main--container h1 {
+        font-size: 3rem;
+        font-weight: 700;
+        letter-spacing: 0.1rem;
+        text-transform: uppercase;
+        color: var(--lyla-purple);
+        margin: 0;
+        padding: 0;
+    }
+    
+    .app__main--container p {
+        font-size: 1.2rem;
+        font-weight: 300;
+        letter-spacing: 0.01rem;
+    }
+    
+    /* Adding style to the last child p of app__message */
+    .app__message p:last-of-type{
+        margin-bottom: 3rem;
+        /* color: var(--lyla-purple); */
+    }
+    
+    a {
+        text-decoration: none;
+    }
+    
+}

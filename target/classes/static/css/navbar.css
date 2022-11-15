@@ -1,0 +1,175 @@
+/* Styles for the navbar version mobile */
+.app__navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 1rem;
+    background-color: rgba(255, 255, 255, 0.25);
+
+    width: 100%;
+    box-sizing: border-box;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.app__navbar li {
+    list-style: none;
+}
+
+.app__navbar img {
+    width: 32px;
+    height: 32px;
+}
+
+.app__logo-link {
+    text-decoration: none;
+    color: var(--spring-green);
+}
+
+.material-symbols-outlined {
+    font-size: 32px !important;
+    color: var(--spring-green);
+}
+
+.app__navbar-right {
+    padding: 0;
+    margin: 0;
+}
+
+.app__navbar-desktop {
+    display: none;
+}
+
+.app__navbar-menu {
+    /* width: 2.1rem;
+    height: 2.1rem; */
+    /* border-radius: 50%; */
+    /* position: relative; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.app__navbar-menu div {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 15;
+
+    padding: 2rem 1rem;
+
+    width: 70%;
+    height: 100vh;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(168, 168, 168, 0.15);
+    background-color: white;
+    color: var(--spring-green);
+
+    animation-name: slideIn;
+    animation-duration: 1s;
+}
+
+.app__navbar-menu div ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.app__navbar-menu div ul li {
+    margin: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.app__navbar-menu div ul li a {
+    color: var(--gray-color);
+    text-decoration: none;
+    font-size: 1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+
+    transition: all 0.3s ease-in-out;
+}
+
+.app__navbar-menu div ul li a:hover {
+    color: var(--spring-green);
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* Styles for the navbar version desktop */
+@media screen and (min-width: 768px) {
+    .app__navbar-mobile {
+        display: none;
+    }
+
+    .app__navbar {
+        padding: 0.2rem 12rem;
+    }
+
+    .app__navbar-desktop {
+        display: flex;
+        list-style: none;
+        align-items: center;
+        margin: 0;
+        gap: 1rem;
+    }
+
+    .app__navbar-right {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+    }
+
+
+    .app__navbar-desktop li a {
+        color: var(--gray-color);
+        text-decoration: none;
+        font-size: 1rem;
+        text-transform: uppercase;
+        font-weight: 500;
+
+        transition: all 0.3s ease-in-out;
+    }
+
+    .app__navbar-desktop li a:hover {
+        color: var(--spring-green);
+    }
+
+    .app__navbar-desktop a {
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+    }
+
+}
