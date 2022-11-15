@@ -6,10 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" th:href="@{/css/navbar.css}">
-    <link rel="stylesheet" href="../static/css/navbar.css">
+    <link rel="stylesheet" href="../../static/css/navbar.css">
     <link rel="stylesheet" th:href="@{/css/template.css}">
-    <link rel="stylesheet" href="../static/css/template.css">
-    <link rel="stylesheet" href="../static/css/forbiden.css">
+    <link rel="stylesheet" href="../../static/css/template.css">
+    <link rel="stylesheet" href="../../static/css/forbiden.css">
     <link rel="stylesheet" th:href="@{/css/forbiden.css}">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,500,0,0" />
@@ -22,7 +22,7 @@
         <div class="app__navbar-logo app__navbar-mobile">
             <!-- Link to the index with logo within -->
             <a href="#" th:href="@{/}" class="app__logo-link">
-                <img class="" src="../static/images/springlogo.png" th:src="@{/images/springlogo.png}" alt="menu" />
+                <img class="" src="../../static/images/springlogo.png" th:src="@{/images/springlogo.png}" alt="menu" />
             </a>
         </div>
 
@@ -35,7 +35,7 @@
         <div class="app__navbar-logo app__navbar-desktop">
             <!-- Link to the index with logo within -->
             <a href="#" th:href="@{/}" class="app__logo-link">
-                <img class="" src="../static/images/springlogo.png" th:src="@{/images/springlogo.png}" alt="menu" />
+                <img class="" src="../../static/images/springlogo.png" th:src="@{/images/springlogo.png}" alt="menu" />
             </a>
             <a href="#" th:href="@{/}" class="app__logo-link">
                 <h1 class="app__title">Java Enterprise</h1>
@@ -99,7 +99,7 @@
         </div>
 
         <figure>
-            <img src="../static/images/forbiden.png" th:src="@{/images/forbiden.png}" alt="401" />
+            <img src="../../static/images/forbiden.png" th:src="@{/images/forbiden.png}" alt="401" />
         </figure>
 
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -117,7 +117,7 @@
     <script type="text/javascript" sec:authorize="isAuthenticated()">
         isAuthenticated = true;
     </script>
-    <script src="../static/js/navbar.js" th:src="@{/js/navbar.js}"></script>
+    <script src="../../static/js/navbar.js" th:src="@{/js/navbar.js}"></script>
 
 
 </body>
