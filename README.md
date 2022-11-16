@@ -36,6 +36,42 @@ git clone
 https://security-with-database.azurewebsites.net/
 ```
 
+## Usage
+
+### Register a new user
+
+#### Desktop View
+![Register](https://github.com/leonardoapd/Lec91_CustomFormLogin/blob/e447251b36ca2038257ee6059a808a039d34b038/src/main/resources/static/screenshots/signup-desktop.png?raw=true)
+
+#### Mobile View
+<img src="https://github.com/leonardoapd/Lec91_CustomFormLogin/blob/e447251b36ca2038257ee6059a808a039d34b038/src/main/resources/static/screenshots/signup-mobile.png?raw=true" width="200" height="400" alt="Register">
+
+### Login
+
+#### Desktop View
+![Login](https://github.com/leonardoapd/Lec91_CustomFormLogin/blob/e447251b36ca2038257ee6059a808a039d34b038/src/main/resources/static/screenshots/login-desktop.png?raw=true)
+
+#### Mobile View
+<img src="https://github.com/leonardoapd/Lec91_CustomFormLogin/blob/e447251b36ca2038257ee6059a808a039d34b038/src/main/resources/static/screenshots/login-mobile.png?raw=true" width="200" height="400" alt="Login">
+
+### Home
+
+#### Desktop View
+![Home](https://github.com/leonardoapd/Lec91_CustomFormLogin/blob/e447251b36ca2038257ee6059a808a039d34b038/src/main/resources/static/screenshots/index-desktop.png?raw=true)
+
+#### Mobile View
+<img src="https://github.com/leonardoapd/Lec91_CustomFormLogin/blob/e447251b36ca2038257ee6059a808a039d34b038/src/main/resources/static/screenshots/index-mobile.png?raw=true" width="200" height="400" alt="Home">
+
+### Permission Denied
+
+#### Desktop View
+![Permission Denied](https://github.com/leonardoapd/Lec91_CustomFormLogin/blob/e447251b36ca2038257ee6059a808a039d34b038/src/main/resources/static/screenshots/permission-denied-desktop.png?raw=true)
+
+#### Mobile View
+<img src="https://github.com/leonardoapd/Lec91_CustomFormLogin/blob/e447251b36ca2038257ee6059a808a039d34b038/src/main/resources/static/screenshots/permission-denied-mobile.png?raw=true" width="200" height="400" alt="Permission Denied">
+
+
+
 ## Running the application
 
 To run the application with maven, you can run the following command:
